@@ -1,0 +1,128 @@
+{
+  "categorias": [
+    {
+      "id": 1,
+      "nome": "Cafés em grãos"
+    },
+    {
+      "id": 2,
+      "nome": "Cafés moídos"
+    },
+    {
+      "id": 3,
+      "nome": "Kits de degustação"
+    }
+  ],
+  "produtos": [
+    {
+      "id": 1,
+      "nome": "Bourbon Amarelo",
+      "descricao": "Café em grãos com perfil suave, doçura delicada e notas de caramelo.",
+      "preco": 34.9,
+      "categoriaId": 1,
+      "peso": "250 g",
+      "torra": "Média",
+      "imagem": "https://res.cloudinary.com/jbci8qwj/image/upload/v1795139340/bourbon-amarelo.svg",
+      "estoque": 15
+    },
+    {
+      "id": 2,
+      "nome": "Bourbon Especial",
+      "descricao": "Café em grãos com sabor equilibrado e notas de chocolate e castanhas.",
+      "preco": 37.9,
+      "categoriaId": 1,
+      "peso": "250 g",
+      "torra": "Média",
+      "imagem": "https://res.cloudinary.com/jbci8qwj/image/upload/v1795139341/bourbon-especial.svg",
+      "estoque": 12
+    },
+    {
+      "id": 3,
+      "nome": "Catuaí Vermelho",
+      "descricao": "Café em grãos com corpo marcante, doçura equilibrada e notas de frutas maduras.",
+      "preco": 32.9,
+      "categoriaId": 1,
+      "peso": "250 g",
+      "torra": "Média",
+      "imagem": "https://res.cloudinary.com/jbci8qwj/image/upload/v1795139342/catuai-vermelho.svg",
+      "estoque": 18
+    },
+    {
+      "id": 4,
+      "nome": "Chocolate Intenso",
+      "descricao": "Café moído com sabor encorpado e notas sensoriais que lembram chocolate amargo.",
+      "preco": 29.9,
+      "categoriaId": 2,
+      "peso": "250 g",
+      "torra": "Média escura",
+      "imagem": "https://res.cloudinary.com/jbci8qwj/image/upload/v1795139346/chocolate-intenso.svg",
+      "estoque": 20
+    },
+    {
+      "id": 5,
+      "nome": "Espresso Blend",
+      "descricao": "Blend de café em grãos com sabor intenso e corpo elevado, pensado para o preparo de espresso.",
+      "preco": 39.9,
+      "categoriaId": 1,
+      "peso": "250 g",
+      "torra": "Média escura",
+      "imagem": "https://res.cloudinary.com/jbci8qwj/image/upload/v1795139348/espresso-blend.svg",
+      "estoque": 10
+    },
+    {
+      "id": 6,
+      "nome": "Ethiopia Floral",
+      "descricao": "Café em grãos com perfil delicado, aroma floral e notas cítricas.",
+      "preco": 49.9,
+      "categoriaId": 1,
+      "peso": "250 g",
+      "torra": "Clara",
+      "imagem": "https://res.cloudinary.com/jbci8qwj/image/upload/v1795139350/ethiopia-floral.svg",
+      "estoque": 0
+    },
+    {
+      "id": 7,
+      "nome": "Frutas Vermelhas",
+      "descricao": "Café moído com perfil frutado, acidez presente e notas que lembram frutas vermelhas.",
+      "preco": 36.9,
+      "categoriaId": 2,
+      "peso": "250 g",
+      "torra": "Clara",
+      "imagem": "https://res.cloudinary.com/jbci8qwj/image/upload/v1795139355/frutas-vermelhas.svg",
+      "estoque": 8
+    },
+    {
+      "id": 8,
+      "nome": "Honey Process",
+      "descricao": "Café em grãos com doçura acentuada, corpo aveludado e notas de mel e caramelo.",
+      "preco": 42.9,
+      "categoriaId": 1,
+      "peso": "250 g",
+      "torra": "Média",
+      "imagem": "https://res.cloudinary.com/jbci8qwj/image/upload/v1795139356/honey-process.svg",
+      "estoque": 7
+    },
+    {
+      "id": 9,
+      "nome": "Kit Degustação",
+      "descricao": "Conjunto com três pacotes de café moído: Bourbon Amarelo, Chocolate Intenso e Frutas Vermelhas, com 100 g de cada.",
+      "preco": 59.9,
+      "categoriaId": 3,
+      "peso": "300 g",
+      "torra": "Variada",
+      "imagem": "https://res.cloudinary.com/jbci8qwj/image/upload/v1795139358/kit-degustacao.svg",
+      "estoque": 5
+    },
+    {
+      "id": 10,
+      "nome": "Mantiqueira",
+      "descricao": "Café moído com perfil equilibrado, aroma agradável e notas de chocolate e caramelo.",
+      "preco": 33.9,
+      "categoriaId": 2,
+      "peso": "250 g",
+      "torra": "Média",
+      "imagem": "https://res.cloudinary.com/jbci8qwj/image/upload/v1795139362/mantiqueira.svg",
+      "estoque": 14
+    }
+  ]
+}
