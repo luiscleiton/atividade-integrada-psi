@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f3ee;
+    color: #3b2a1a;
+}
+
+.cabecalho {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e2d6c8;
+}
+
+.logo {
+    width: 180px;
+    height: auto;
+}
+
+.conteudo {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.conteudo h1 {
+    margin-bottom: 12px;
+}
