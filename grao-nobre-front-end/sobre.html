@@ -7,20 +7,43 @@
     <title>Sobre nós | Grão Nobre</title>
 
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/menu.js" defer></script>
 </head>
 <body>
     <header class="cabecalho">
-        <a class="marca" href="index.html" aria-label="Grão Nobre - início">
-            <img
-                class="logo"
-                src="https://res.cloudinary.com/jbci8qwj/image/upload/v1795135930/logo-grao-nobre.png"
-                alt="Grão Nobre"
-            >
-        </a>
+    <a class="marca" href="index.html" aria-label="Grão Nobre - início">
+        <img
+            class="logo"
+            src="https://res.cloudinary.com/jbci8qwj/image/upload/v1795135930/logo-grao-nobre.png"
+            alt="Grão Nobre"
+        >
+    </a>
 
-        <a class="cabecalho-link" href="index.html">
-            Nossos cafés
-        </a>
+    <nav class="menu" aria-label="Menu principal">
+        <button
+            class="menu-botao"
+            type="button"
+            aria-expanded="false"
+            aria-controls="menu-principal"
+        >
+            <span class="menu-botao-texto">Menu</span>
+            <span class="menu-icone" aria-hidden="true">☰</span>
+        </button>
+
+        <ul class="menu-lista" id="menu-principal">
+            <li>
+                <a class="menu-link" href="index.html">Nossos cafés</a>
+            </li>
+
+            <li>
+                <a class="menu-link menu-link-ativo" href="sobre.html" aria-current="page">Sobre nós</a>
+            </li>
+
+            <li>
+                <a class="menu-link" href="contato.html">Contato</a>
+            </li>
+        </ul>
+    </nav>
     </header>
 
     <main class="conteudo">

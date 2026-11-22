@@ -294,3 +294,84 @@ button:focus-visible {
         gap: 32px;
     }
 }
+
+.menu {
+    position: relative;
+    justify-self: end;
+}
+
+.menu-botao {
+    display: none;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border: 1px solid #d9d4cd;
+    background-color: #ffffff;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+}
+
+.menu-icone {
+    font-size: 16px;
+    line-height: 1;
+}
+
+.menu-lista {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    list-style: none;
+}
+
+.menu-link {
+    font-size: 12px;
+    letter-spacing: 0.5px;
+}
+
+.menu-link {
+    display: inline-block;
+    padding-bottom: 5px;
+    border-bottom: 1px solid transparent;
+}
+
+.menu-link:hover, .menu-link-ativo {
+    border-bottom-color: #242424;
+}
+
+@media (max-width: 768px) {
+    .menu-botao {
+        display: flex;
+    }
+
+    .menu-lista {
+        position: absolute;
+        top: calc(100% + 12px);
+        right: 0;
+        z-index: 10;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        min-width: 220px;
+        padding: 12px 0;
+        border: 1px solid #d9d4cd;
+        background-color: #ffffff;
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    .menu-lista.aberto {
+        display: flex;
+    }
+
+    .menu-link {
+        display: block;
+        padding: 14px 20px;
+        border-bottom: 0;
+    }
+
+    .menu-link:hover,
+    .menu-link-ativo {
+        background-color: #f7f5f2;
+    }
+}
