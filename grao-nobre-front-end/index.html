@@ -3,23 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grão Nobre São Roque - Desde 2026</title>
+
+    <title>Grão Nobre</title>
+
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header class="cabecalho">
-        <img
-            class="logo"
-            src="https://res.cloudinary.com/jbci8qwj/image/upload/v1795135930/logo-grao-nobre.png"
-            alt="Logo Grão Nobre"
-        >
+        <a class="marca" href="index.html" aria-label="Grão Nobre - início">
+            <img
+                class="logo"
+                src="https://res.cloudinary.com/jbci8qwj/image/upload/v1795135930/logo-grao-nobre.png"
+                alt="Grão Nobre"
+            >
+        </a>
+
+        <a class="cabecalho-link" href="#catalogo">
+            Nossos cafés
+        </a>
     </header>
 
     <main class="conteudo">
-        <h1>Bem-vindo ao Grão Nobre</h1>
-        <p>Delivery de café em São Roque.</p>
-    </main>
+        <section id="catalogo" aria-labelledby="titulo-catalogo">
+            <h1 id="titulo-catalogo" class="titulo-catalogo">
+                Nossos cafés
+            </h1>
 
-    <script src="js/api.js"></script>
+            <!-- Estrutura visual: os filtros serão implementados depois. -->
+            <nav class="categorias" aria-label="Categorias de produtos">
+                <button
+                    class="categoria categoria-ativa"
+                    type="button"
+                    aria-pressed="true"
+                >
+                    Todos
+                </button>
+
+                <button
+                    class="categoria"
+                    type="button"
+                    aria-pressed="false"
+                >
+                    Em grãos
+                </button>
+
+                <button
+                    class="categoria"
+                    type="button"
+                    aria-pressed="false"
+                >
+                    Moídos
+                </button>
+
+                <button
+                    class="categoria"
+                    type="button"
+                    aria-pressed="false"
+                >
+                    Kits
+                </button>
+            </nav>
+
+            <div class="lista-produtos" id="lista-produtos">
+                <!-- Card provisório para validar o layout antes da API. -->
+                <article class="produto">
+                    <div class="produto-imagem produto-bourbon-amarelo">
+                        <img
+                            src="https://res.cloudinary.com/jbci8qwj/image/upload/v1795139340/bourbon-amarelo.svg"
+                            alt="Embalagem do café Bourbon Amarelo Grão Nobre"
+                        >
+                    </div>
+
+                    <div class="produto-informacoes">
+                        <h2 class="produto-nome">Bourbon Amarelo</h2>
+                        <p class="produto-preco">R$ 34,90</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
