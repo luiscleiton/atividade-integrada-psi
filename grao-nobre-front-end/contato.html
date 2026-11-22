@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contato | Grão Nobre</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="cabecalho">
+        <a class="marca" href="index.html" aria-label="Grão Nobre - início">
+            <img
+                class="logo"
+                src="https://res.cloudinary.com/jbci8qwj/image/upload/v1795135930/logo-grao-nobre.png"
+                alt="Grão Nobre"
+            >
+        </a>
+
+        <a class="cabecalho-link" href="index.html">
+            Nossos cafés
+        </a>
+    </header>
+
+    <main class="conteudo">
+        <section class="pagina-contato" aria-labelledby="titulo-contato">
+            <h1 id="titulo-contato" class="titulo-pagina">
+                Contato
+            </h1>
+
+            <div class="contato-conteudo">
+                <div class="texto-pagina">
+                    <p>
+                        Tem alguma dúvida sobre nossos cafés, kits ou informações
+                        de um produto? Envie sua mensagem e nossa equipe responderá
+                        assim que possível.
+                    </p>
+
+                    <p>
+                        E-mail: contato@graonobre.com.br<br>
+                        Telefone: (11) 4002-8922<br>
+                        Atendimento: segunda a sexta, das 9h às 18h
+                    </p>
+                </div>
+
+                <form class="formulario-contato" action="#" method="post">
+                    <div class="campo">
+                        <label for="nome">Nome</label>
+                        <input
+                            type="text"
+                            id="nome"
+                            name="nome"
+                            placeholder="Digite seu nome"
+                            required
+                        >
+                    </div>
+
+                    <div class="campo">
+                        <label for="email">E-mail</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Digite seu e-mail"
+                            required
+                        >
+                    </div>
+
+                    <div class="campo">
+                        <label for="mensagem">Mensagem</label>
+                        <textarea
+                            id="mensagem"
+                            name="mensagem"
+                            rows="5"
+                            placeholder="Escreva sua mensagem"
+                            required
+                        ></textarea>
+                    </div>
+
+                    <button class="botao-enviar" type="submit">
+                        Enviar mensagem
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
