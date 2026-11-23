@@ -423,3 +423,10 @@ button:focus-visible {
         background-color: #f7f5f2;
     }
 }
+
+.mensagem-produtos {
+    margin-bottom: 24px;
+    color: #555555;
+    font-size: 14px;
+    line-height: 1.6;
+}

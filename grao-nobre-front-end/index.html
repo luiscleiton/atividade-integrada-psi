@@ -9,6 +9,8 @@
 
     <link rel="stylesheet" href="css/style.css">
     <script src="js/menu.js" defer></script>
+    <script src="js/api.js" defer></script>
+    <script src="js/vitrine.js" defer></script>
 </head>
 
 <body>
@@ -65,132 +67,11 @@
                 </button>
             </nav>
 
-            <div class="lista-produtos" id="lista-produtos">
-                <!-- Cards estáticos para validar o layout antes da integração com a API. -->
-                <article class="produto">
-                    <div class="produto-imagem produto-bourbon-amarelo">
-                        <img src="https://res.cloudinary.com/jbci8qwj/image/upload/v1795139340/bourbon-amarelo.svg"
-                            alt="Embalagem do café Bourbon Amarelo Grão Nobre">
-                    </div>
+            <p id="mensagem-produtos" class="mensagem-produtos" role="status">
+                Carregando cafés...
+            </p>
 
-                    <div class="produto-informacoes">
-                        <h2 class="produto-nome">Bourbon Amarelo</h2>
-                        <p class="produto-preco">R$ 34,90</p>
-                    </div>
-                </article>
-
-                <article class="produto">
-                    <div class="produto-imagem produto-bourbon-especial">
-                        <img src="https://res.cloudinary.com/jbci8qwj/image/upload/v1795139341/bourbon-especial.svg"
-                            alt="Embalagem do café Bourbon Especial Grão Nobre">
-                    </div>
-
-                    <div class="produto-informacoes">
-                        <h2 class="produto-nome">Bourbon Especial</h2>
-                        <p class="produto-preco">R$ 37,90</p>
-                    </div>
-                </article>
-
-                <article class="produto">
-                    <div class="produto-imagem produto-catuai-vermelho">
-                        <img src="https://res.cloudinary.com/jbci8qwj/image/upload/v1795139342/catuai-vermelho.svg"
-                            alt="Embalagem do café Catuaí Vermelho Grão Nobre">
-                    </div>
-
-                    <div class="produto-informacoes">
-                        <h2 class="produto-nome">Catuaí Vermelho</h2>
-                        <p class="produto-precoco">R$ 32,90</p>
-                    </div>
-                </article>
-
-                <article class="produto">
-                    <div class="produto-imagem produto-chocolate-intenso">
-                        <img src="https://res.cloudinary.com/jbci8qwj/image/upload/v1795139346/chocolate-intenso.svg"
-                            alt="Embalagem do café Chocolate Intenso Grão Nobre" loading="lazy">
-                    </div>
-
-                    <div class="produto-informacoes">
-                        <h2 class="produto-nome">Chocolate Intenso</h2>
-                        <p class="produto-preco">R$ 29,90</p>
-                    </div>
-                </article>
-
-                <article class="produto">
-                    <div class="produto-imagem produto-espresso-blend">
-                        <img src="https://res.cloudinary.com/jbci8qwj/image/upload/v1795139348/espresso-blend.svg"
-                            alt="Embalagem do café Espresso Blend Grão Nobre" loading="lazy">
-                    </div>
-
-                    <div class="produto-informacoes">
-                        <h2 class="produto-nome">Espresso Blend</h2>
-                        <p class="produto-preco">R$ 39,90</p>
-                    </div>
-                </article>
-
-                <article class="produto">
-                    <div class="produto-imagem produto-ethiopia-floral">
-                        <span class="produto-selo">Esgotado</span>
-
-                        <img src="https://res.cloudinary.com/jbci8qwj/image/upload/v1795139350/ethiopia-floral.svg"
-                            alt="Embalagem do café Ethiopia Floral Grão Nobre" loading="lazy">
-                    </div>
-
-                    <div class="produto-informacoes">
-                        <h2 class="produto-nome">Ethiopia Floral</h2>
-                        <p class="produto-preco">R$ 49,90</p>
-                    </div>
-                </article>
-
-                <article class="produto">
-                    <div class="produto-imagem produto-frutas-vermelhas">
-                        <img src="https://res.cloudinary.com/jbci8qwj/image/upload/v1795139355/frutas-vermelhas.svg"
-                            alt="Embalagem do café Frutas Vermelhas Grão Nobre" loading="lazy">
-                    </div>
-
-                    <div class="produto-informacoes">
-                        <h2 class="produto-nome">Frutas Vermelhas</h2>
-                        <p class="produto-preco">R$ 36,90</p>
-                    </div>
-                </article>
-
-                <article class="produto">
-                    <div class="produto-imagem produto-honey-process">
-                        <img src="https://res.cloudinary.com/jbci8qwj/image/upload/v1795139356/honey-process.svg"
-                            alt="Embalagem do café Honey Process Grão Nobre" loading="lazy">
-                    </div>
-
-                    <div class="produto-informacoes">
-                        <h2 class="produto-nome">Honey Process</h2>
-                        <p class="produto-preco">R$ 42,90</p>
-                    </div>
-                </article>
-
-                <article class="produto">
-                    <div class="produto-imagem produto-kit-degustacao">
-                        <img src="https://res.cloudinary.com/jbci8qwj/image/upload/v1795139358/kit-degustacao.svg"
-                            alt="Embalagem do Kit Degustação Grão Nobre" loading="lazy">
-                    </div>
-
-                    <div class="produto-informacoes">
-                        <h2 class="produto-nome">Kit Degustação</h2>
-                        <p class="produto-preco">R$ 59,90</p>
-                    </div>
-                </article>
-
-                <article class="produto">
-                    <div class="produto-imagem produto-mantiqueira">
-                        <img src="https://res.cloudinary.com/jbci8qwj/image/upload/v1795139362/mantiqueira.svg"
-                            alt="Embalagem do café Mantiqueira Grão Nobre" loading="lazy">
-                    </div>
-
-                    <div class="produto-informacoes">
-                        <h2 class="produto-nome">Mantiqueira</h2>
-                        <p class="produto-preco">R$ 33,90</p>
-                    </div>
-                </article>
-            </div>
-            </article>
-            </div>
+            <div class="lista-produtos" id="lista-produtos"></div>
         </section>
     </main>
 </body>
