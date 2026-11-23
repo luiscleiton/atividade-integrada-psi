@@ -1,5 +1,13 @@
 const listaProdutos = document.querySelector('#lista-produtos');
 const mensagemProdutos = document.querySelector('#mensagem-produtos');
+const campoBusca = document.querySelector('#busca-produtos');
+
+const botoesCategorias = document.querySelectorAll(
+    '.categorias [data-categoria]'
+);
+
+let produtosCarregados = [];
+let categoriaSelecionada = 'todos';
 
 const formatoPreco = new Intl.NumberFormat('pt-BR', {
     style: 'currency',
@@ -77,21 +85,78 @@ function renderizarProdutos(produtos) {
     listaProdutos.append(fragmento);
 }
 
+function normalizarTexto(texto) {
+    return texto
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .toLowerCase()
+        .trim();
+}
+
+function aplicarFiltros() {
+    const termoBusca = normalizarTexto(campoBusca.value);
+
+    const produtosFiltrados = produtosCarregados.filter((produto) => {
+        const correspondeAoNome = normalizarTexto(produto.nome)
+            .includes(termoBusca);
+
+        const correspondeACategoria =
+            categoriaSelecionada === 'todos' ||
+            String(produto.categoriaId) === categoriaSelecionada;
+
+        return correspondeAoNome && correspondeACategoria;
+    });
+
+    renderizarProdutos(produtosFiltrados);
+
+    if (produtosCarregados.length === 0) {
+        mensagemProdutos.textContent =
+            'Nenhum café cadastrado no momento.';
+        mensagemProdutos.hidden = false;
+        return;
+    }
+
+    if (produtosFiltrados.length === 0) {
+        mensagemProdutos.textContent =
+            'Nenhum café encontrado para essa busca ou categoria.';
+        mensagemProdutos.hidden = false;
+        return;
+    }
+
+    mensagemProdutos.hidden = true;
+}
+
+campoBusca.addEventListener('input', aplicarFiltros);
+
+botoesCategorias.forEach((botao) => {
+    botao.addEventListener('click', () => {
+        categoriaSelecionada = botao.dataset.categoria;
+
+        botoesCategorias.forEach((item) => {
+            const estaAtivo = item === botao;
+
+            item.classList.toggle('categoria-ativa', estaAtivo);
+            item.setAttribute('aria-pressed', String(estaAtivo));
+        });
+
+        aplicarFiltros();
+    });
+});
+
 async function carregarVitrine() {
     mensagemProdutos.hidden = false;
     mensagemProdutos.textContent = 'Carregando cafés...';
 
     try {
-        const produtos = await buscarProdutos();
+        produtosCarregados = await buscarProdutos();
 
-        renderizarProdutos(produtos);
+        aplicarFiltros();
 
-        if (produtos.length === 0) {
-            mensagemProdutos.textContent = 'Nenhum café cadastrado no momento.';
-            return;
-        }
+        campoBusca.disabled = false;
 
-        mensagemProdutos.hidden = true;
+        botoesCategorias.forEach((botao) => {
+            botao.disabled = false;
+        });
     } catch (erro) {
         mensagemProdutos.textContent =
             'Não foi possível carregar os cafés. Verifique se a API está em execução.';

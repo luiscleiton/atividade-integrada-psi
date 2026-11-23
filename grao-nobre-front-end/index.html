@@ -48,21 +48,30 @@
                 Nossos cafés
             </h1>
 
-            <!-- Estrutura visual: os filtros serão implementados depois. -->
+            <!-- Busca de produtos. -->
+            <div class="busca-produtos">
+                <label for="busca-produtos">Buscar café</label>
+
+                <input type="search" id="busca-produtos" placeholder="Digite o nome do café" autocomplete="off"
+                    disabled>
+            </div>
+
+            <!-- Filtros de produtos. -->
             <nav class="categorias" aria-label="Categorias de produtos">
-                <button class="categoria categoria-ativa" type="button" aria-pressed="true">
+                <button class="categoria categoria-ativa" type="button" data-categoria="todos" aria-pressed="true"
+                    disabled>
                     Todos
                 </button>
 
-                <button class="categoria" type="button" aria-pressed="false">
+                <button class="categoria" type="button" data-categoria="1" aria-pressed="false" disabled>
                     Em grãos
                 </button>
 
-                <button class="categoria" type="button" aria-pressed="false">
+                <button class="categoria" type="button" data-categoria="2" aria-pressed="false" disabled>
                     Moídos
                 </button>
 
-                <button class="categoria" type="button" aria-pressed="false">
+                <button class="categoria" type="button" data-categoria="3" aria-pressed="false" disabled>
                     Kits
                 </button>
             </nav>

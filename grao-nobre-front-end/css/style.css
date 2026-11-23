@@ -430,3 +430,38 @@ button:focus-visible {
     font-size: 14px;
     line-height: 1.6;
 }
+
+.busca-produtos {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 420px;
+    margin-bottom: 28px;
+}
+
+.busca-produtos label {
+    font-size: 13px;
+    letter-spacing: 0.5px;
+}
+
+.busca-produtos input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #d9d4cd;
+    border-radius: 0;
+    background-color: #ffffff;
+    color: #242424;
+    font: inherit;
+    font-size: 14px;
+}
+
+.busca-produtos input:focus-visible {
+    outline: 2px solid #242424;
+    outline-offset: 2px;
+}
+
+.busca-produtos input:disabled,
+.categoria:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
