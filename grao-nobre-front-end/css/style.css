@@ -465,3 +465,145 @@ button:focus-visible {
     opacity: 0.5;
     cursor: not-allowed;
 }
+
+/* Link dos cards da vitrine */
+
+.produto-link {
+    display: block;
+    min-width: 0;
+}
+
+/* Página de detalhes do produto */
+
+.detalhe-voltar {
+    display: inline-block;
+    margin-bottom: 24px;
+    font-size: 13px;
+    color: #555555;
+}
+
+.detalhe-voltar:hover {
+    text-decoration: underline;
+    text-underline-offset: 5px;
+}
+
+.detalhe-oculto {
+    display: none;
+}
+
+.detalhe-produto {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: center;
+    gap: 72px;
+}
+
+.detalhe-imagem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1 / 1.05;
+    overflow: hidden;
+}
+
+.detalhe-imagem img {
+    display: block;
+    width: 65%;
+    height: 85%;
+    object-fit: contain;
+}
+
+.detalhe-informacoes {
+    min-width: 0;
+    padding: 24px 0;
+}
+
+.detalhe-categoria {
+    margin-bottom: 16px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #666666;
+}
+
+.detalhe-nome {
+    margin-bottom: 20px;
+    font-size: 36px;
+    line-height: 1.2;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    overflow-wrap: anywhere;
+}
+
+.detalhe-preco {
+    margin-bottom: 32px;
+    font-size: 22px;
+}
+
+.detalhe-descricao {
+    max-width: 500px;
+    margin-bottom: 32px;
+    font-size: 15px;
+    line-height: 1.8;
+    color: #555555;
+}
+
+.detalhe-caracteristicas {
+    border-top: 1px solid #e5e0da;
+}
+
+.detalhe-caracteristicas > div {
+    display: grid;
+    grid-template-columns: 140px minmax(0, 1fr);
+    gap: 16px;
+    padding: 18px 0;
+    border-bottom: 1px solid #e5e0da;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.detalhe-caracteristicas dt {
+    color: #666666;
+}
+
+.detalhe-caracteristicas dd {
+    overflow-wrap: anywhere;
+}
+
+.detalhe-observacao {
+    margin-top: 28px;
+    font-size: 12px;
+    line-height: 1.8;
+    color: #666666;
+}
+
+@media (max-width: 768px) {
+    .detalhe-produto {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .detalhe-informacoes {
+        padding: 0;
+    }
+
+    .detalhe-nome {
+        font-size: 28px;
+    }
+
+    .detalhe-preco {
+        font-size: 20px;
+        margin-bottom: 24px;
+    }
+}
+
+.detalhe-produto.detalhe-oculto {
+    display: none;
+}
+
+@media (max-width: 480px) {
+    .detalhe-caracteristicas > div {
+        grid-template-columns: 110px minmax(0, 1fr);
+        gap: 12px;
+    }
+}

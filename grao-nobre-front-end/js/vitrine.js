@@ -1,6 +1,6 @@
+const campoBusca = document.querySelector('#busca-produtos');
 const listaProdutos = document.querySelector('#lista-produtos');
 const mensagemProdutos = document.querySelector('#mensagem-produtos');
-const campoBusca = document.querySelector('#busca-produtos');
 
 const botoesCategorias = document.querySelectorAll(
     '.categorias [data-categoria]'
@@ -31,6 +31,14 @@ const classesPorProduto = {
 function criarCardProduto(produto) {
     const card = document.createElement('article');
     card.className = 'produto';
+
+    const link = document.createElement('a');
+    link.className = 'produto-link';
+    link.href = `produto.html?id=${produto.id}`;
+    link.setAttribute(
+        'aria-label',
+        `Ver detalhes de ${produto.nome}`
+    );
 
     const areaImagem = document.createElement('div');
     areaImagem.className = 'produto-imagem';
@@ -68,7 +76,9 @@ function criarCardProduto(produto) {
     preco.textContent = formatoPreco.format(produto.preco);
 
     informacoes.append(nome, preco);
-    card.append(areaImagem, informacoes);
+
+    link.append(areaImagem, informacoes);
+    card.append(link);
 
     return card;
 }

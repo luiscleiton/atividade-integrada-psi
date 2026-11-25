@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Detalhes do café | Grão Nobre</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/menu.js" defer></script>
+    <script src="js/api.js" defer></script>
+    <script src="js/produto.js" defer></script>
+</head>
+
+<body>
+    <header class="cabecalho">
+        <a class="marca" href="index.html" aria-label="Grão Nobre - início">
+            <img
+                class="logo"
+                src="https://res.cloudinary.com/jbci8qwj/image/upload/v1795135930/logo-grao-nobre.png"
+                alt="Grão Nobre"
+            >
+        </a>
+
+        <nav class="menu" aria-label="Menu principal">
+            <button
+                class="menu-botao"
+                type="button"
+                aria-expanded="false"
+                aria-controls="menu-principal"
+            >
+                <span class="menu-botao-texto">Menu</span>
+                <span class="menu-icone" aria-hidden="true">☰</span>
+            </button>
+
+            <ul class="menu-lista" id="menu-principal">
+                <li>
+                    <a
+                        class="menu-link menu-link-ativo"
+                        href="index.html"
+                    >
+                        Nossos cafés
+                    </a>
+                </li>
+
+                <li>
+                    <a class="menu-link" href="sobre.html">
+                        Sobre nós
+                    </a>
+                </li>
+
+                <li>
+                    <a class="menu-link" href="contato.html">
+                        Contato
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="conteudo">
+        <a class="detalhe-voltar" href="index.html">
+            ← Voltar para nossos cafés
+        </a>
+
+        <p id="mensagem-produto" class="mensagem-produtos" role="status">
+            Carregando café...
+        </p>
+
+        <article
+            id="detalhe-produto"
+            class="detalhe-produto detalhe-oculto"
+            aria-labelledby="detalhe-nome"
+        >
+            <div id="detalhe-imagem" class="detalhe-imagem">
+                <img
+                    id="detalhe-imagem-produto"
+                    src=""
+                    alt=""
+                >
+            </div>
+
+            <div class="detalhe-informacoes">
+                <p id="detalhe-categoria" class="detalhe-categoria"></p>
+
+                <h1 id="detalhe-nome" class="detalhe-nome"></h1>
+
+                <p id="detalhe-preco" class="detalhe-preco"></p>
+
+                <p id="detalhe-descricao" class="detalhe-descricao"></p>
+
+                <dl class="detalhe-caracteristicas">
+                    <div>
+                        <dt>Peso</dt>
+                        <dd id="detalhe-peso"></dd>
+                    </div>
+
+                    <div>
+                        <dt>Torra</dt>
+                        <dd id="detalhe-torra"></dd>
+                    </div>
+
+                    <div>
+                        <dt>Disponibilidade</dt>
+                        <dd id="detalhe-disponibilidade"></dd>
+                    </div>
+                </dl>
+
+                <p class="detalhe-observacao">
+                    Conheça nossos cafés e encontre o perfil que combina
+                    com o seu momento.
+                </p>
+            </div>
+        </article>
+    </main>
+</body>
+
+</html>
