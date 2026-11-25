@@ -92,10 +92,11 @@
             </div>
 
             <p class="admin-aviso" id="admin-aviso">
-                Consulta ao catálogo disponível. Cadastro e edição estão em prévia:
-                abra o formulário para conferir os campos. Salvar e excluir
-                ainda não estão disponíveis.
+                Painel demonstrativo sem autenticação. As alterações são enviadas à API pública
+                e podem ser perdidas após reinícios ou novas publicações do serviço.
             </p>
+
+            <p id="admin-feedback" class="mensagem-produtos" role="status"></p>
 
             <div
                 class="admin-resumo"
@@ -137,8 +138,9 @@
             <section class="admin-editor" id="admin-editor" aria-labelledby="admin-editor-titulo" hidden>
                 <h2 class="admin-subtitulo" id="admin-editor-titulo">Cadastrar café</h2>
                 <p class="admin-editor-aviso" id="admin-editor-aviso">
-                    Prévia do formulário: nenhuma alteração será salva nesta etapa.
+                    Preencha os campos e clique em Salvar. As alterações serão enviadas à API.
                 </p>
+                <p id="admin-operacao" class="mensagem-produtos" role="status"></p>
                 <form id="admin-formulario" aria-describedby="admin-editor-aviso">
                     <div class="admin-form-grid">
                         <div class="admin-form-campo admin-form-largo">
@@ -177,7 +179,7 @@
                         <div class="admin-form-campo">
                             <label for="admin-cor">Cor de fundo</label>
                             <input id="admin-cor" name="corFundo" type="color" value="#f1ede7" aria-describedby="admin-cor-ajuda">
-                            <small id="admin-cor-ajuda">Prévia: a escolha ainda não altera as cores do catálogo.</small>
+                            <small id="admin-cor-ajuda">Cor salva no produto. A aplicação na vitrine e nos detalhes será ajustada na próxima etapa.</small>
                         </div>
                         <div class="admin-form-campo admin-form-largo">
                             <label for="admin-imagem">URL da imagem</label>
@@ -186,7 +188,7 @@
                     </div>
                     <div class="admin-form-acoes">
                         <button class="admin-botao admin-botao-secundario" id="admin-cancelar" type="button">Cancelar</button>
-                        <button class="admin-botao admin-botao-principal" type="submit" disabled>Salvar</button>
+                        <button class="admin-botao admin-botao-principal" id="admin-salvar" type="submit">Salvar</button>
                     </div>
                 </form>
             </section>
