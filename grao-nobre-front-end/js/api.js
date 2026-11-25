@@ -1,6 +1,6 @@
 'use strict';
 
-const API_URL = 'http://localhost:3000';
+const API_URL = 'https://grao-nobre-api-vbk5.onrender.com';
 
 async function buscarProdutos() {
     const resposta = await fetch(`${API_URL}/produtos`);
