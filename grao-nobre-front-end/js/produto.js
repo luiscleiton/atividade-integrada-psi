@@ -6,20 +6,6 @@ const formatoPreco = new Intl.NumberFormat('pt-BR', {
     currency: 'BRL'
 });
 
-// Mesmas cores utilizadas nos cards da vitrine.
-const classesPorProduto = {
-    1: 'produto-bourbon-amarelo',
-    2: 'produto-bourbon-especial',
-    3: 'produto-catuai-vermelho',
-    4: 'produto-chocolate-intenso',
-    5: 'produto-espresso-blend',
-    6: 'produto-ethiopia-floral',
-    7: 'produto-frutas-vermelhas',
-    8: 'produto-honey-process',
-    9: 'produto-kit-degustacao',
-    10: 'produto-mantiqueira'
-};
-
 function obterIdProduto() {
     const parametros = new URLSearchParams(window.location.search);
 
@@ -40,13 +26,12 @@ function preencherDetalhes(produto) {
         '#detalhe-disponibilidade'
     );
 
-    const classeCor = classesPorProduto[produto.id];
-
     imagem.className = 'detalhe-imagem';
 
-    if (classeCor) {
-        imagem.classList.add(classeCor);
-    }
+    const corFundo = String(produto.corFundo ?? '').trim();
+    imagem.style.backgroundColor = /^#[0-9a-f]{6}$/i.test(corFundo)
+        ? corFundo
+        : '#f1ede7';
 
     imagemProduto.src = produto.imagem;
     imagemProduto.alt = `Embalagem de ${produto.nome} Grão Nobre`;

@@ -23,7 +23,8 @@
       "peso": "250 g",
       "torra": "Média",
       "imagem": "https://res.cloudinary.com/jbci8qwj/image/upload/v1795139340/bourbon-amarelo.svg",
-      "estoque": 15
+      "estoque": 15,
+      "corFundo": "#bcebe9"
     },
     {
       "id": 2,
@@ -34,7 +35,8 @@
       "peso": "500 g",
       "torra": "Média",
       "imagem": "https://res.cloudinary.com/jbci8qwj/image/upload/v1795139341/bourbon-especial.svg",
-      "estoque": 12
+      "estoque": 12,
+      "corFundo": "#d9c8ef"
     },
     {
       "id": 3,
@@ -45,7 +47,8 @@
       "peso": "250 g",
       "torra": "Média",
       "imagem": "https://res.cloudinary.com/jbci8qwj/image/upload/v1795139342/catuai-vermelho.svg",
-      "estoque": 18
+      "estoque": 18,
+      "corFundo": "#f8d1e2"
     },
     {
       "id": 4,
@@ -56,7 +59,8 @@
       "peso": "500 g",
       "torra": "Média escura",
       "imagem": "https://res.cloudinary.com/jbci8qwj/image/upload/v1795139346/chocolate-intenso.svg",
-      "estoque": 20
+      "estoque": 20,
+      "corFundo": "#dce5f5"
     },
     {
       "id": 5,
@@ -67,7 +71,8 @@
       "peso": "250 g",
       "torra": "Média escura",
       "imagem": "https://res.cloudinary.com/jbci8qwj/image/upload/v1795139348/espresso-blend.svg",
-      "estoque": 10
+      "estoque": 10,
+      "corFundo": "#f5b1b1"
     },
     {
       "id": 6,
@@ -78,7 +83,8 @@
       "peso": "250 g",
       "torra": "Clara",
       "imagem": "https://res.cloudinary.com/jbci8qwj/image/upload/v1795139350/ethiopia-floral.svg",
-      "estoque": 0
+      "estoque": 0,
+      "corFundo": "#d9c8ef"
     },
     {
       "id": 7,
@@ -89,7 +95,8 @@
       "peso": "250 g",
       "torra": "Clara",
       "imagem": "https://res.cloudinary.com/jbci8qwj/image/upload/v1795139355/frutas-vermelhas.svg",
-      "estoque": 8
+      "estoque": 8,
+      "corFundo": "#f5cdb8"
     },
     {
       "id": 8,
@@ -100,7 +107,8 @@
       "peso": "250 g",
       "torra": "Média",
       "imagem": "https://res.cloudinary.com/jbci8qwj/image/upload/v1795139356/honey-process.svg",
-      "estoque": 7
+      "estoque": 7,
+      "corFundo": "#f5e5bd"
     },
     {
       "id": 9,
@@ -111,7 +119,8 @@
       "peso": "750 g",
       "torra": "Variada",
       "imagem": "https://res.cloudinary.com/jbci8qwj/image/upload/v1795139358/kit-degustacao.svg",
-      "estoque": 5
+      "estoque": 5,
+      "corFundo": "#bcebe9"
     },
     {
       "id": 10,
@@ -122,7 +131,8 @@
       "peso": "250 g",
       "torra": "Média",
       "imagem": "https://res.cloudinary.com/jbci8qwj/image/upload/v1795139362/mantiqueira.svg",
-      "estoque": 14
+      "estoque": 14,
+      "corFundo": "#c9efd5"
     }
   ]
 }

@@ -120,6 +120,11 @@ function criarLinhaAdmin(produto) {
     areaImagem.className = 'admin-produto-imagem';
     areaImagem.setAttribute('aria-hidden', 'true');
 
+    const corFundo = String(produto.corFundo ?? '').trim();
+    areaImagem.style.backgroundColor = /^#[0-9a-f]{6}$/i.test(corFundo)
+        ? corFundo
+        : '#f1ede7';
+
     if (produto.imagem) {
         const imagem = document.createElement('img');
 
@@ -324,12 +329,6 @@ const adminOperacao = document.querySelector('#admin-operacao');
 const adminFeedback = document.querySelector('#admin-feedback');
 const adminSalvar = document.querySelector('#admin-salvar');
 
-const adminCoresAtuais = {
-    1: '#bcebe9', 2: '#d9c8ef', 3: '#f8d1e2', 4: '#dce5f5',
-    5: '#f5b1b1', 6: '#d9c8ef', 7: '#f5cdb8', 8: '#f5e5bd',
-    9: '#bcebe9', 10: '#c9efd5'
-};
-
 function abrirFormularioAdmin(produto = null, origem = adminCadastrar) {
     if (adminOcupado) return;
     adminProdutoEditando = produto;
@@ -343,9 +342,9 @@ function abrirFormularioAdmin(produto = null, origem = adminCadastrar) {
         campos.forEach((campo) => {
             adminFormulario.elements.namedItem(campo).value = produto[campo] ?? '';
         });
-        const cor = produto.corFundo || adminCoresAtuais[produto.id] || '#f1ede7';
+        const corFundo = String(produto.corFundo ?? '').trim();
         adminFormulario.elements.namedItem('corFundo').value =
-            /^#[0-9a-f]{6}$/i.test(cor) ? cor : '#f1ede7';
+            /^#[0-9a-f]{6}$/i.test(corFundo) ? corFundo : '#f1ede7';
     }
 
     adminEditor.hidden = false;

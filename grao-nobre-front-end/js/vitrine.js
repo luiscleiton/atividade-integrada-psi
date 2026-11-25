@@ -14,20 +14,6 @@ const formatoPreco = new Intl.NumberFormat('pt-BR', {
     currency: 'BRL'
 });
 
-// Configuração visual temporária, até adicionarmos corFundo aos produtos.
-const classesPorProduto = {
-    1: 'produto-bourbon-amarelo',
-    2: 'produto-bourbon-especial',
-    3: 'produto-catuai-vermelho',
-    4: 'produto-chocolate-intenso',
-    5: 'produto-espresso-blend',
-    6: 'produto-ethiopia-floral',
-    7: 'produto-frutas-vermelhas',
-    8: 'produto-honey-process',
-    9: 'produto-kit-degustacao',
-    10: 'produto-mantiqueira'
-};
-
 function criarCardProduto(produto) {
     const card = document.createElement('article');
     card.className = 'produto';
@@ -43,11 +29,10 @@ function criarCardProduto(produto) {
     const areaImagem = document.createElement('div');
     areaImagem.className = 'produto-imagem';
 
-    const classeCor = classesPorProduto[produto.id];
-
-    if (classeCor) {
-        areaImagem.classList.add(classeCor);
-    }
+    const corFundo = String(produto.corFundo ?? '').trim();
+    areaImagem.style.backgroundColor = /^#[0-9a-f]{6}$/i.test(corFundo)
+        ? corFundo
+        : '#f1ede7';
 
     const imagem = document.createElement('img');
     imagem.src = produto.imagem;
