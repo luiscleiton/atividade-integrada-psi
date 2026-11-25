@@ -128,46 +128,6 @@ button:focus-visible {
     letter-spacing: 0.5px;
 }
 
-.produto-bourbon-amarelo {
-    background-color: #bcebe9;
-}
-
-.produto-bourbon-especial {
-    background-color: #d9c8ef;
-}
-
-.produto-catuai-vermelho {
-    background-color: #f8d1e2;
-}
-
-.produto-chocolate-intenso {
-    background-color: #dce5f5;
-}
-
-.produto-espresso-blend {
-    background-color: #f5b1b1;
-}
-
-.produto-ethiopia-floral {
-    background-color: #d9c8ef;
-}
-
-.produto-frutas-vermelhas {
-    background-color: #f5cdb8;
-}
-
-.produto-honey-process {
-    background-color: #f5e5bd;
-}
-
-.produto-kit-degustacao {
-    background-color: #bcebe9;
-}
-
-.produto-mantiqueira {
-    background-color: #c9efd5;
-}
-
 .produto-imagem img {
     display: block;
     width: 65%;
