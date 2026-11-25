@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Área administrativa | Grão Nobre</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+
+    <script src="js/menu.js" defer></script>
+    <script src="js/api.js" defer></script>
+    <script src="js/admin.js" defer></script>
+</head>
+
+<body>
+    <header class="cabecalho">
+        <a class="marca" href="index.html" aria-label="Grão Nobre - início">
+            <img
+                class="logo"
+                src="https://res.cloudinary.com/jbci8qwj/image/upload/v1795135930/logo-grao-nobre.png"
+                alt="Grão Nobre"
+            >
+        </a>
+
+        <nav class="menu" aria-label="Menu principal">
+            <button
+                class="menu-botao"
+                type="button"
+                aria-expanded="false"
+                aria-controls="menu-principal"
+            >
+                <span class="menu-botao-texto">Menu</span>
+                <span class="menu-icone" aria-hidden="true">☰</span>
+            </button>
+
+            <ul class="menu-lista" id="menu-principal">
+                <li>
+                    <a class="menu-link" href="index.html">
+                        Nossos cafés
+                    </a>
+                </li>
+
+                <li>
+                    <a class="menu-link" href="sobre.html">
+                        Sobre nós
+                    </a>
+                </li>
+
+                <li>
+                    <a class="menu-link" href="contato.html">
+                        Contato
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="conteudo admin-conteudo">
+        <a class="admin-voltar" href="index.html">
+            ← Voltar para o site
+        </a>
+
+        <section aria-labelledby="admin-titulo">
+            <div class="admin-abertura">
+                <div>
+                    <p class="admin-identificacao">
+                        Área administrativa
+                    </p>
+
+                    <h1 class="admin-titulo" id="admin-titulo">
+                        Gerenciar cafés
+                    </h1>
+
+                    <p class="admin-descricao">
+                        Organize os produtos, acompanhe o estoque
+                        e mantenha as informações do catálogo atualizadas.
+                    </p>
+                </div>
+
+                <button
+                    class="admin-botao admin-botao-principal"
+                    id="admin-cadastrar"
+                    aria-controls="admin-editor"
+                    aria-expanded="false"
+                    type="button"
+                >
+                    Cadastrar café
+                </button>
+            </div>
+
+            <p class="admin-aviso" id="admin-aviso">
+                Consulta ao catálogo disponível. Cadastro e edição estão em prévia:
+                abra o formulário para conferir os campos. Salvar e excluir
+                ainda não estão disponíveis.
+            </p>
+
+            <div
+                class="admin-resumo"
+                role="group"
+                aria-label="Resumo de todo o catálogo"
+            >
+                <div class="admin-resumo-item">
+                    <p class="admin-resumo-rotulo">
+                        Produtos cadastrados
+                    </p>
+
+                    <p class="admin-resumo-valor" id="admin-total">
+                        —
+                    </p>
+                </div>
+
+                <div class="admin-resumo-item">
+                    <p class="admin-resumo-rotulo">
+                        Com estoque
+                    </p>
+
+                    <p class="admin-resumo-valor" id="admin-com-estoque">
+                        —
+                    </p>
+                </div>
+
+                <div class="admin-resumo-item">
+                    <p class="admin-resumo-rotulo">
+                        Esgotados
+                    </p>
+
+                    <p class="admin-resumo-valor" id="admin-esgotados">
+                        —
+                    </p>
+                </div>
+            </div>
+
+
+            <section class="admin-editor" id="admin-editor" aria-labelledby="admin-editor-titulo" hidden>
+                <h2 class="admin-subtitulo" id="admin-editor-titulo">Cadastrar café</h2>
+                <p class="admin-editor-aviso" id="admin-editor-aviso">
+                    Prévia do formulário: nenhuma alteração será salva nesta etapa.
+                </p>
+                <form id="admin-formulario" aria-describedby="admin-editor-aviso">
+                    <div class="admin-form-grid">
+                        <div class="admin-form-campo admin-form-largo">
+                            <label for="admin-nome">Nome do café</label>
+                            <input id="admin-nome" name="nome" type="text" required>
+                        </div>
+                        <div class="admin-form-campo admin-form-largo">
+                            <label for="admin-descricao">Descrição</label>
+                            <textarea id="admin-descricao" name="descricao" rows="4" required></textarea>
+                        </div>
+                        <div class="admin-form-campo">
+                            <label for="admin-categoria">Categoria</label>
+                            <select id="admin-categoria" name="categoriaId" required>
+                                <option value="">Selecione uma categoria</option>
+                                <option value="1">Em grãos</option>
+                                <option value="2">Moídos</option>
+                                <option value="3">Kits</option>
+                            </select>
+                        </div>
+                        <div class="admin-form-campo">
+                            <label for="admin-preco">Preço (R$)</label>
+                            <input id="admin-preco" name="preco" type="number" min="0" step="0.01" required>
+                        </div>
+                        <div class="admin-form-campo">
+                            <label for="admin-peso">Peso</label>
+                            <input id="admin-peso" name="peso" type="text" placeholder="Ex.: 250 g" required>
+                        </div>
+                        <div class="admin-form-campo">
+                            <label for="admin-torra">Torra</label>
+                            <input id="admin-torra" name="torra" type="text" placeholder="Ex.: Média">
+                        </div>
+                        <div class="admin-form-campo">
+                            <label for="admin-estoque">Quantidade em estoque</label>
+                            <input id="admin-estoque" name="estoque" type="number" min="0" step="1" required>
+                        </div>
+                        <div class="admin-form-campo">
+                            <label for="admin-cor">Cor de fundo</label>
+                            <input id="admin-cor" name="corFundo" type="color" value="#f1ede7" aria-describedby="admin-cor-ajuda">
+                            <small id="admin-cor-ajuda">Prévia: a escolha ainda não altera as cores do catálogo.</small>
+                        </div>
+                        <div class="admin-form-campo admin-form-largo">
+                            <label for="admin-imagem">URL da imagem</label>
+                            <input id="admin-imagem" name="imagem" type="url" placeholder="https://" required>
+                        </div>
+                    </div>
+                    <div class="admin-form-acoes">
+                        <button class="admin-botao admin-botao-secundario" id="admin-cancelar" type="button">Cancelar</button>
+                        <button class="admin-botao admin-botao-principal" type="submit" disabled>Salvar</button>
+                    </div>
+                </form>
+            </section>
+
+            <div class="admin-barra">
+                <h2 class="admin-subtitulo" id="admin-lista-titulo">
+                    Produtos do catálogo
+                </h2>
+
+                <div class="admin-busca">
+                    <label for="admin-busca-produtos">
+                        Buscar café
+                    </label>
+
+                    <input
+                        id="admin-busca-produtos"
+                        type="search"
+                        placeholder="Digite o nome do café"
+                        autocomplete="off"
+                        aria-controls="admin-lista-produtos"
+                        disabled
+                    >
+                </div>
+            </div>
+
+            <p
+                id="admin-mensagem"
+                class="mensagem-produtos"
+                role="status"
+            >
+                Carregando cafés...
+            </p>
+
+            <p class="admin-instrucao" id="admin-instrucao-tabela">
+                Em telas menores, deslize a tabela para os lados.
+            </p>
+
+            <div
+                class="admin-tabela-area"
+                role="region"
+                aria-labelledby="admin-lista-titulo"
+                aria-describedby="admin-instrucao-tabela"
+                aria-busy="true"
+                id="admin-tabela-area"
+                tabindex="0"
+            >
+                <table class="admin-tabela">
+                    <caption class="admin-somente-leitor">
+                        Listagem de produtos do catálogo
+                    </caption>
+
+                    <thead>
+                        <tr>
+                            <th scope="col">Produto</th>
+                            <th scope="col">Categoria</th>
+                            <th scope="col">Preço</th>
+                            <th scope="col">Estoque</th>
+                            <th scope="col">Situação</th>
+                            <th scope="col">Ações</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="admin-lista-produtos"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer class="admin-rodape">
+        <p>Grão Nobre · Área administrativa</p>
+    </footer>
+</body>
+
+</html>
